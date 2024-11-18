@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Message</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f3f3f3;
+        }
+        input, button {
+            width: 90%;  /* Adjust width for smaller screens */
+            max-width: 400px; /* Max width for larger screens */
+            margin: 10px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #error {
+            color: red;
+            margin-top: 10px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Enter Password</h1>
+    <input type="password" id="password" placeholder="Enter password here">
+    <button onclick="checkPassword()">Submit</button>
+    <p id="error">Incorrect Password. Try Again!</p>
+
+    <script>
+        function checkPassword() {
+            const enteredPassword = document.getElementById("password").value;
+            const correctPassword = "your_password"; // Replace with your password
+            if (enteredPassword === correctPassword) {
+                window.location.href = "message.html"; // Redirect to the message page
+            } else {
+                document.getElementById("error").style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Message</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 10% 5%; /* Responsive padding */
+        }
+        h1 {
+            font-size: 2.5rem; /* Adjust font size */
+        }
+        p {
+            font-size: 1.2rem;
+        }
+        @media screen and (max-width: 600px) {
+            h1 {
+                font-size: 2rem; /* Adjusted font size for smaller screens */
+            }
+            p {
+                font-size: 1rem; /* Adjusted font size for smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Your Secret Message</h1>
+    <p>Yahan tumhari woh baat hogi jo tumhe uss dost ko batani hai.</p>
+</body>
+</html>
